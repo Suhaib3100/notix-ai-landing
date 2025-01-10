@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "next",
+    "react-app",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "eslint:recommended"
+  ],
+  "rules": {
+    "unused-imports/no-unused-imports": "error",
+    "no-empty-function": "off",
+    "@next/next/no-img-element": "off",
+    "react/react-in-jsx-scope": "off",
+    "no-script-url": "off",
+    "object-shorthand": ["error", "always"],
+    "no-unused-expressions": "off",
+    "react/display-name": "off",
+    "react/no-unknown-property": "off",
+    "react/prop-types": "off",
+    "quotes": ["error", "single"]
+  },
+  "plugins": ["unused-imports"],
+  "settings": {
+    "next": {
+      "rootDir": true
+    }
+  }
+}

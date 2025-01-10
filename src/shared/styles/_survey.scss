@@ -1,0 +1,390 @@
+/*
+ * Copyright 2024 OpenBuild
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+// @import url(../../../public/font/pt-mono.regular.ttf);
+
+$primary: var(--sjs-primary-backcolor, var(--primary, #1a1a1a));
+$primary-light: var(--sjs-primary-backcolor-light, var(--primary-light, #1a1a1a));
+$primary-background-dark: var(--sjs-primary-backcolor-dark, #1a1a1a);
+$primary-foreground: var(--sjs-primary-forecolor, var(--primary-foreground, #fff));
+$primary-foreground-disabled: var(--sjs-primary-forecolor-light, var(--primary-foreground-disabled, rgba(#fff, 0.25)));
+
+$secondary: var(--sjs-secondary-backcolor, var(--secondary, #1a1a1a));
+$secondary-light: var(--sjs-secondary-backcolor-light, var(--secondary-light, rgba(26, 26, 26, 0.25)));
+$secondary-backcolor-semi-light: var(--sjs-secondary-backcolor-semi-light, rgba(26, 26, 26, 0.1));
+$secondary-forecolor: var(--sjs-secondary-forecolor, #fff);
+$secondary-forecolor-light: var(--sjs-secondary-forecolor-light, rgba(#fff, 0.25));
+
+$editor-background: var(
+  --sjs-editorpanel-backcolor,
+  var(--sjs-editor-background, var(--background-dim-light, #f9f9f9))
+);
+$question-background: var(
+  --sjs-questionpanel-backcolor,
+  var(--sjs-question-background, var(--sjs-general-backcolor, var(--background, #fff)))
+);
+
+$background: var(--sjs-general-backcolor, var(--background, #fff));
+$background-dim: var(--sjs-general-backcolor-dim, var(--background-dim, #f3f3f3));
+$background-dim-light: var(--sjs-general-backcolor-dim-light, var(--background-dim-light, #f9f9f9));
+$background-semitransparent: var(--background-semitransparent, rgba(144, 144, 144, 0.5));
+$background-dark: var(--sjs-questionpanel-hovercolor, var(--sjs-general-backcolor-dark, rgb(248, 248, 248)));
+$background-dim-dark: var(--sjs-editorpanel-hovercolor, var(--sjs-general-dim-backcolor-dark, rgb(243, 243, 243)));
+
+$corner-radius: var(--sjs-corner-radius, 8px);
+$editor-corner-radius: var(--sjs-editorpanel-cornerRadius, var(--sjs-corner-radius, 8px));
+$panel-corner-radius: var(--sjs-questionpanel-cornerRadius, var(--sjs-corner-radius, 8px));
+
+$foreground: var(--sjs-general-forecolor, var(--foreground, #161616));
+$foreground-light: var(--sjs-general-forecolor-light, var(--foreground-light, #1a1a1a));
+$foreground-dim: var(--sjs-general-dim-forecolor, rgba(0, 0, 0, 0.91));
+$foreground-dim-light: var(--sjs-general-dim-forecolor-light, rgba(0, 0, 0, 0.45));
+
+$border: var(--sjs-border-default, var(--border, #d6d6d6));
+$border-light: var(--sjs-border-light, var(--border-light, #eaeaea));
+$border-inside: var(--sjs-border-inside, var(--border-inside, rgba(0, 0, 0, 0.16)));
+
+$shadow-medium: rgba(0, 0, 0, 0.1);
+$shadow-inner: rgba(0, 0, 0, 0.15);
+
+$red: var(--sjs-special-red, var(--red, #e60a3e));
+$red-light: var(--sjs-special-red-light, var(--red-light, rgba(230, 10, 62, 0.1)));
+$red-forecolor: var(--sjs-special-red-forecolor, #ffffff);
+$yellow: var(--sjs-special-yellow, var(--yellow, #ff9814));
+$yellow-light: var(--sjs-special-yellow-light, var(--yellow-light, rgba(26, 26, 26, 0.1)));
+$yellow-forecolor: var(--sjs-special-yellow-forecolor, #ffffff);
+$green: var(--sjs-special-green, var(--green, #1a1a1a));
+$green-light: var(--sjs-special-green-light, var(--green-light, rgba(25, 179, 148, 0.1)));
+$green-forecolor: var(--sjs-special-green-forecolor, #ffffff);
+$blue: var(--sjs-special-blue, #437fd9);
+$blue-light: var(--sjs-special-blue-light, var(--blue-light, rgba(67, 127, 217, 0.1)));
+$blue-forecolor: var(--sjs-special-blue-forecolor, #ffffff);
+
+$font-family: var(--font-inter);
+$font-size: var(--sjs-font-size, calc(2 * var(--sjs-base-unit, var(--base-unit, 8px))));
+
+$font-surveytitle-family: var(--font-pt_mono);
+$font-surveytitle-weight: var(--sjs-font-surveytitle-weight, 700);
+$font-surveytitle-size: var(--sjs-font-surveytitle-size, calc(2 * var(--sjs-font-size, $font-size)));
+
+$font-pagetitle-family: var(--font-pt_mono);
+$font-pagetitle-weight: var(--sjs-font-pagetitle-weight, 700);
+$font-pagetitle-color: var(--sjs-font-pagetitle-color, var(--sjs-general-dim-forecolor, rgba(0, 0, 0, 0.91)));
+$font-pagetitle-size: var(--sjs-font-pagetitle-size, calc(1.5 * var(--sjs-font-size, $font-size)));
+
+$font-pagedescription-family: var(--font-pt_mono);
+$font-pagedescription-weight: var(--sjs-font-pagedescription-weight, 400);
+$font-pagedescription-color: var(
+  --sjs-font-pagedescription-color,
+  var(--sjs-general-dim-forecolor-light, rgba(0, 0, 0, 0.45))
+);
+$font-pagedescription-size: var(--sjs-font-pagedescription-size, calc(1 * var(--sjs-font-size, $font-size)));
+
+$font-questiontitle-family: var(--font-pt_mono);
+$font-questiontitle-weight: var(--sjs-font-questiontitle-weight, 700);
+$font-questiontitle-color: var(
+  --sjs-font-questiontitle-color,
+  var(--sjs-general-forecolor, var(--foreground, #161616))
+);
+$font-questiontitle-size: var(--sjs-font-questiontitle-size, calc(1 * var(--sjs-font-size, $font-size)));
+
+$font-questiondescription-family: var(--font-pt_mono);
+$font-questiondescription-weight: var(--sjs-font-questiondescription-weight, 400);
+$font-questiondescription-color: var(
+  --sjs-font-questiondescription-color,
+  var(--sjs-general-dim-forecolor-light, rgba(0, 0, 0, 0.45))
+);
+$font-questiondescription-size: var(--sjs-font-questiondescription-size, calc(1 * var(--sjs-font-size, $font-size)));
+
+$font-editorfont-family: var(--font-pt_mono);
+$font-editorfont-weight: var(--sjs-font-editorfont-weight, 400);
+$font-editorfont-color: var(--sjs-font-editorfont-color, var(--sjs-general-dim-forecolor, rgba(0, 0, 0, 0.91)));
+$font-editorfont-size: var(--sjs-font-editorfont-size, calc(1 * var(--sjs-font-size, $font-size)));
+$questionpanel-boxshadow: var(--sjs-shadow-small, 0px 1px 2px 0px $shadow-inner);
+$editor-boxshadow: var(--sjs-shadow-inner, inset 0px 1px 2px $shadow-inner);
+$base-unit: var(--sjs-base-unit, var(--base-unit, 8px));
+
+@function calcSize($multiplier) {
+  $result: calc(#{$multiplier} * #{$base-unit});
+  @return $result;
+}
+
+@function calcFontSize($multiplier) {
+  $result: calc(#{$multiplier} * #{$font-size});
+  @return $result;
+}
+
+@function calcCornerRadius($multiplier) {
+  $result: calc(#{$multiplier} * #{$corner-radius});
+  @return $result;
+}
+
+@mixin smallBold {
+  font-family: var(--font-pt_mono);
+  font-style: normal;
+  font-weight: 700;
+  font-size: calcFontSize(0.75);
+  line-height: calcSize(2);
+}
+
+@mixin defaultBold {
+  font-family: var(--font-pt_mono);
+  font-style: normal;
+  font-weight: 700;
+  font-size: calcFontSize(1);
+  line-height: calcSize(3);
+}
+
+@mixin defaultFont {
+  font-family: var(--font-pt_mono);
+  font-style: normal;
+  font-size: calcFontSize(1);
+  line-height: calcSize(3);
+}
+
+@mixin borderLight {
+  border: calcSize(0.25) solid $border-light;
+  border-radius: calcCornerRadius(1);
+}
+
+.sd-element__title span {
+  font-family: '__PT_Mono_09efbc';
+}
+.sd-item__control-label {
+  font-family: 'nunito_sans';
+}
+
+
+.svc-creator__banner {
+  display: none;
+}
+.sd-root-modern .sd-element__num {
+  font-size: 16px !important;
+  -webkit-margin-start: auto;
+  margin-inline-start: auto;
+  width: auto;
+}
+.survey-container {
+  .sd-page {
+    padding: 0;
+  }
+  .sd-body__navigation.sd-action-bar {
+    padding: 0;
+    margin-top: 24px;
+  }
+}
+.sd-body .sd-body__page {
+  min-width: calc(200px + 6 * var(--base-unit, 8px)) !important;
+}
+.sd-row.sd-page__row > div {
+  min-width: 200px !important;
+}
+.svc-tab-designer .sd-title {
+  display: block !important;
+}
+.svc-creator,
+.sd-root-modern {
+  --primary: #1a1a1a;
+  --primary-foreground: #1a1a1a;
+  --secondary: #1a1a1a;
+  --background: #ffffff;
+  --background-dim: #ffffff;
+  --background-dim-light: #f8f8f8;
+  --primary-foreground: #ffffff;
+  --foreground: #1a1a1a;
+  --base-unit: 8px;
+  --font-family: '' .sd-btn {
+    background-color: #1a1a1a;
+  }
+  .sd-input {
+    background: transparent;
+    border: 1px solid rgba(26, 26, 26, 0.4);
+    border-radius: 8px;
+  }
+  .svc-logic-question-value,
+  .sd-element--with-frame {
+    border: 1px solid rgba(26, 26, 26, 0.1);
+    box-shadow: none;
+  }
+}
+.sd-element--with-frame {
+  padding: 0 !important;
+}
+.sd-input {
+  border-radius: 8px;
+}
+.sd-btn {
+  background: #1a1a1a !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  padding: 0 !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+.sd-footer {
+  margin-top: 16px !important;
+}
+.sd-btn--action:hover {
+  background: #1a1a1a !important;
+}
+.sd-container-modern {
+  margin-bottom: 0 !important;
+}
+.svc-tab-designer .sd-title {
+  display: block !important;
+}
+.sv-action {
+  flex: 1;
+}
+.sd-root-modern--mobile .sd-body__navigation .sd-btn {
+  height: 48px;
+  line-height: 48px;
+  padding: 0 !important;
+  font-weight: 400;
+}
+.sd-navigation__complete-btn {
+  width: 100%;
+}
+.svc-creator .svc-logic-question-value,
+.svc-creator .sd-element--with-frame,
+.sd-root-modern .svc-logic-question-value,
+.sd-root-modern .sd-element--with-frame {
+  border: 0;
+  box-shadow: none;
+}
+
+.svc-creator .sd-input,
+.sd-root-modern .sd-input {
+  box-shadow: none !important;
+}
+.sd-completedpage {
+  margin-bottom: 120px;
+}
+
+.sa-commercial,
+.sa-table__action-container,
+.sa-table__global-filter {
+  display: none;
+}
+.sa-tabulator__header {
+  background: transparent;
+}
+.sa-table__btn.sa-table__btn--small.sa-table__btn--gray {
+  border: 1px solid #1a1a1a;
+  font-weight: 400;
+  color: #1a1a1a;
+  &:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+}
+.sd-root-modern--mobile .sd-body.sd-body--static {
+  padding: 0 !important;
+}
+.sd-element__title .sd-element__num {
+  color: #1a1a1a !important;
+}
+.sd-input {
+  height: 40px !important;
+  border-radius: 8px !important;
+}
+
+.sd-body.sd-body--static .sd-body__navigation {
+  padding-top: 0 !important;
+  border-radius: 8px;
+}
+.sv-list__item.sv-list__item--selected .sv-list__item-body, .sv-list__item.sv-list__item--selected:hover .sv-list__item-body, .sv-list__item.sv-list__item--selected.sv-list__item--focused .sv-list__item-body, .sv-multi-select-list .sv-list__item.sv-list__item--selected.sv-list__item--focused .sv-list__item-body, li:focus .sv-list__item.sv-list__item--selected .sv-list__item-body {
+  background-color: $primary !important;
+}
+
+.svc-page__content:not(.svc-page__content--new):focus, .svc-hovered.svc-page__content:not(.svc-page__content--new) {
+  background-color: rgba(26, 26, 26, 0.1) !important;
+}
+
+.svc-question__content:focus, .svc-creator .svc-page .svc-hovered > .svc-question__content {
+  box-shadow: 0 0 0 2px var(--secondary-light, rgba(26, 26, 26, 0.1)) !important;
+}
+.svc-btn {
+  background-color: $primary !important;
+  height: 40px !important;
+  .svc-text{
+    color: #fff !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+  }
+  .sv-svg-icon {
+    fill: #fff !important;
+  }
+}
+.svc-page__question-type-selector {
+  display: none !important;
+}
+
+.svc-question__content {
+  box-shadow: none !important;
+  border: 1px solid rgba(26, 26, 26, 0.1) !important;
+  border-radius: 12px !important;
+}
+
+.svc-string-editor__content {
+  z-index: 0 !important;
+}
+.sd-btn .sd-navigation__next-btn,
+.sd-btn .sd-navigation__prev-btn {
+  min-width: 100% !important;
+}
+.sd-item {
+  padding-left: 4px !important;
+}
+.sd-dropdown__value {
+  top: -2px !important;
+}
+.sd-dropdown_clean-button-svg {
+  width: 14px !important;
+  height: 14px !important;
+}
+.svc-item-value__item .svc-string-editor {
+  min-width: 48px !important;
+  min-height: 24px !important;
+  .sv-string-editor {
+    min-height: 24px !important;
+  }
+}
+.svc-flex-column.svc-side-bar__wrapper {
+  border-left: none !important;
+}
+.tabulator {
+  width: max-content;
+}
+.sa-table {
+  width: max-content;
+}
+
+.sd-action-bar.sd-footer.sd-body__navigation {
+  padding: 0 !important;
+}
+.sd-element--with-frame>.sd-question__erbox--outside-question {
+  margin: 0 !important;
+}
+.sd-btn.sd-navigation__next-btn,
+.sd-btn.sd-navigation__next-btn {
+  flex: 1 !important;
+}

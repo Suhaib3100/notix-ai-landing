@@ -1,0 +1,71 @@
+/*
+ * Copyright 2024 OpenBuild
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.FeedbackScore {
+  &--passed &-score {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "\0020";
+      position: absolute;
+      top: 0;
+      width: 67px;  // same as `quiz-p-r.svg`
+      height: 110px;  // same as `quiz-p-r.svg`
+      background: transparent none 50% 50% no-repeat;
+    }
+
+    &::before {
+      left: 0;
+      background-image: url("./quiz-p-l.svg");
+    }
+
+    &::after {
+      right: 0;
+      background-image: url("./quiz-p-r.svg");
+    }
+  }
+}
+
+.FeedbackForm {
+  &-reminder {
+    margin-top: 16px;
+    padding: 12px;
+    font-size: 12px;
+    color: rgba(26, 26, 26, 0.6);
+    background-color: #f1f1f1;
+    border-radius: 8px;
+
+    ol,
+    li + li {
+      margin-top: 8px;
+    }
+
+    ol {
+      list-style: none outside decimal;
+      padding-left: 24px;
+      line-height: 16px;
+    }
+  }
+
+  &-link {
+    display: block;
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
